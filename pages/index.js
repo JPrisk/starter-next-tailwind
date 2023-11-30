@@ -2,117 +2,93 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
-
+//lg:shrink max-lg:grow 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className='overflow-y-auto'>
+      <header className='fixed bg-white z-10  px-20 py-1 w-full block align-middle justify-center max-md:px-4 leading-6 font-lato'>
+        <nav className='flex flex-row items-center justify-between basis-0 min-w-fit mr-auto ml-auto py-7'>
+          <div className='shrink-0 max-md:shrin'>
+            <a href="/">
+              <img src='https://assets.setmore.com/website/next/images/common/setmore-logo.svg' />
+            </a>
+          </div>
+
+          <ul className='flex flex-row gap-5 text-nav-items text-justify-end max-xl:hidden'>
+            <li>Learn</li>
+            <li>Integrations</li>
+            <li>Features</li>
+            <li>Industries</li>
+            <li>Pricing</li>
+          </ul>
+          <div className='flex flex-row gap-5 shrink-0  text-nav-items items-center'>
+            <a href="" className='max-sm:hidden'>+1 (800) 749-4920</a>
+            <a href="/login" className=''>Login</a>
+            <a href="/signup" className='max-xl:hidden'>
+              <button className=' bg-sm-brand justify-center text-white rounded-md px-4 py-1 whitespace-nowrap shrink-0 min-w-[100px] text-[14px]'>Start FREE</button>
+            </a>
+            <button className='w-10 xl:hidden'>
+              <img src='hamburger-menu.svg'></img>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <section className='pt-44 px-20 w-full block align-middle justify-center max-md:px-4'>
+        <div className='flex flex-row flex-wrap'>
+          <div className='basis-1/2 grow flex flex-col max-lg:shrink-0'>
+            <div className='pt-5'>
+              <span className='font-euclid text-5xl font-semibold text-black leading-[64px]'>
+                Free scheduling software
+                <span className='text-sm-brand'>.</span>
+              </span>
+              <p className='font-lato text-nav-items text-lg mt-5'>
+                Organize your business with 24/7 automated online booking, reminders, payments, and more.
+              </p>
+              <form className='flex flex-row flex-wrap basis-full mt-7 justify-between items-center gap-2'>
+                <input className='grow shadow-lg shadow-gray-300 rounded-lg h-14 placeholder:text-nav-items placeholder:text-center' placeholder="your email"></input>
+                <button className='grow font-lato text-lg text-white bg-sm-brand w-fit text-center rounded-lg h-14 shrink-0 min-w-[200px] text-[14px] my-2'>Start FREE</button>
+              </form>
+              <div className='m-4'>
+                <span className='leading-4 font-lato text-nav-items'>{"Or signup with "}
+                  <a className="bg-sky-100 text-sm-brand rounded-sm" href='/singup/google'>google</a>
+                  {" or "}
+                  <a className="bg-sky-100 text-sm-brand rounded-sm" href='/singup/facebook'>facebook</a></span>
+              </div>
+              <div className='mt-4 leading-4'>
+                <span>Excellent 🌠🌠🌠🌠🌠 ⭐ TrustPilot</span>
+              </div>
+            </div>
+          </div>
+          <div className='basis-1/2 pl-3 relative grow max-lg:shrink-0 [@media(max-width:530px)]:py-20'>
+            <video className='max-lg:hidden [@media(max-width:530px)]:flex' autoPlay muted loop poster="https://assets.setmore.com/website/v2/images/homepage-v2/setmore-website-homepage-hero-cover.webp" preload={"auto"} playsInline >
+              <source src="https://assets.setmore.com/website/v2/images/homepage-v2/video/homepage-hero.mp4" type="video/mp4" />
+            </video>
+            <img className='z-1 absolute top-[-40px] sm:max-lg:top-20 [@media(max-width:530px)]:py-20' src='https://assets.setmore.com/website/v2/images/homepage-v2-2/setmore-scheduling-software.png' />
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className='bg-light-blue-grey mt-20'>
+        <div className='px-20 flex flex-row flex-wrap mt-11 items-center justify-between max-md:px-4'>
+          <div className='basis-1/2 relative self-start justify-stretch'>
+            <img className='absolute top-[-60px] rounded-lg shadow-md shadow-gray-500' src="https://assets.setmore.com/website/v2/images/homepage-v2-2/setmore-booking-page.png"></img>
+          </div>
+          <div className='basis-1/2 shrink'>
+            <div className='my-auto ml-auto'>
+              <span className='font-euclid text-3xl font-semibold text-black leading-[32px]'>
+                Spotlight your brand<span className='text-sm-brand'>.</span>
+              </span>
+              <p className='font-lato text-nav-items text-lg mt-5'>
+                Brand experience hits a whole new level with a custom Booking Page. Show why your business stands apart and enable people to self-book at their convenienc
+              </p>
+              <button className='my-5 border-2 border-sm-brand rounded-xl text-center p-5 leading-4 text-sm-brand'>Create your Booking Page</button>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-  )
+
+  );
 }
