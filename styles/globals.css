@@ -2,26 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-b');
+@import url('https://fonts.cdnfonts.com/css/lato');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base{
+  html{
+    margin:0;
+    padding:0;
+    border:0;
+    vertical-align: baseline;
+    box-sizing: border-box
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  body{
+    @apply font-lato;
+    color:#3b4c66;
+  }
+  span.signup-text{
+    @apply text-span-color text-base font-inter
+  }
+  span.links{
+    @apply leading-5 text-dotColor text-sm font-inter cursor-pointer
+  }
 }
