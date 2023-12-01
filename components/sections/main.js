@@ -73,7 +73,7 @@ export default function Main() {
           </ul>
         </div>
         <video
-          autoplay
+          autoPlay
           muted
           loop
           poster="https://assets.setmore.com/website/v2/images/homepage-v2/setmore-website-homepage-hero-cover.webp"
